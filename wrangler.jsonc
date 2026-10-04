@@ -1,0 +1,19 @@
+{
+  // Morgan.stdio: Cloudflare settings
+  "name": "morgan-stdio",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "workers_dev": true,
+  "keep_vars": true,
+  "observability": { "enabled": true },
+
+  // Cloudflare creates these automatically on the first deploy
+  "d1_databases": [{ "binding": "DB" }],
+  "r2_buckets": [{ "binding": "FILES" }],
+
+  "vars": {
+    "ADMIN_EMAIL": "ayukchris8@gmail.com",
+    "PAYMENT_MODE": "demo"
+  }
+  // ADMIN_PASSWORD is a secret: add it in the Cloudflare dashboard (never here)
+}
