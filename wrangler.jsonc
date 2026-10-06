@@ -1,3 +1,4 @@
+
 {
   "name": "morgan-cloudflare",
   "main": "worker.js",
@@ -5,10 +6,14 @@
   "workers_dev": true,
   "keep_vars": true,
   "observability": { "enabled": true },
+
+  // Pinned to the exact resources in the Cloudflare account (no auto-provisioning)
   "d1_databases": [{ "binding": "DB", "database_name": "morgan-cloudflare-db", "database_id": "890745b1-147c-4305-bc5c-388a39e89bdc" }],
   "r2_buckets": [{ "binding": "FILES", "bucket_name": "morgan-cloudflare-files" }],
+
   "vars": {
     "ADMIN_EMAIL": "ayukchris8@gmail.com",
     "PAYMENT_MODE": "demo"
   }
+  // ADMIN_PASSWORD is a secret: add it in the Cloudflare dashboard (never here)
 }
